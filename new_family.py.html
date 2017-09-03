@@ -1,0 +1,77 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>~/Dropbox/programmering/knattnatt/new_family.py.html</title>
+<meta name="Generator" content="Vim/7.4">
+<meta name="plugin-version" content="vim7.4_v2">
+<meta name="syntax" content="python">
+<meta name="settings" content="use_css,pre_wrap,no_foldcolumn,expand_tabs,prevent_copy=">
+<meta name="colorscheme" content="none">
+<style type="text/css">
+<!--
+pre { white-space: pre-wrap; font-family: monospace; color: #ffffff; background-color: #000000; }
+body { font-family: monospace; color: #ffffff; background-color: #000000; }
+* { font-size: 1em; }
+.Comment { color: #00ffff; }
+.Constant { color: #ff40ff; }
+.Identifier { color: #00ffff; font-weight: bold; }
+.Statement { color: #ffff00; }
+.PreProc { color: #5fd7ff; }
+-->
+</style>
+
+<script type='text/javascript'>
+<!--
+
+-->
+</script>
+</head>
+<body>
+<pre id='vimCodeElement'>
+<span class="PreProc">import</span> math
+<span class="PreProc">import</span> json
+
+<span class="PreProc">from</span> make_passport <span class="PreProc">import</span> make_passport
+
+
+<span class="Statement">class</span> <span class="Identifier">NewFamily</span>:
+    <span class="Statement">def</span> <span class="Identifier">__init__</span>:(self, n_members, n_young,
+                  n_adult, n_old, age_percentage,
+                  n_male, n_female, gender_percentage,
+                  country):
+        <span class="Statement">if</span> age_percentage:
+            self.n_young = <span class="Identifier">round</span>(n_members / <span class="Constant">100</span> * n_young)
+            self.n_adult = <span class="Identifier">round</span>(n_members / <span class="Constant">100</span> * n_adult)
+            self.n_old   = <span class="Identifier">round</span>(n_members / <span class="Constant">100</span> * n_old)
+            <span class="Statement">while</span> <span class="Identifier">sum</span>([self.n_young, self.n_adult, self.n_old]) &lt; n_members:
+                self.n_young += <span class="Constant">1</span>
+        <span class="Statement">else</span>:
+            self.n_young = n_young
+            self.n_adult = n_adult
+            self.n_old = n_old
+            self.n_members = <span class="Identifier">sum</span>([n_young, n_adult, n_old])
+
+        <span class="Statement">if</span> gender_percentage:
+            self.n_male   = <span class="Identifier">round</span>(n_members / <span class="Constant">100</span> * n_male)
+            self.n_female = <span class="Identifier">round</span>(n_members / <span class="Constant">100</span> * n_female)
+        <span class="Statement">else</span>:
+            self.n_male   = n_male
+            self.n_female = n_female
+
+        self.country = country
+        self.surname = self.get_surname()
+
+        <span class="Comment">## bytt dir til der landdata er lagret</span>
+        self.country_data = load_json(country)
+
+    <span class="Statement">def</span> <span class="Identifier">get_surname</span>(self):
+        <span class="Comment">#load country json</span>
+        <span class="Comment">#get random surname and delete it from the country data</span>
+        <span class="Comment">#save modified country data to its json file</span>
+
+    <span class="Statement">def</span> <span class="Identifier">make_dem_passports</span>(self):
+</pre>
+</body>
+</html>
+<!-- vim: set foldmethod=manual : -->

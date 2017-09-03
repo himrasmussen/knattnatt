@@ -5,10 +5,9 @@ from make_passport import make_passport
 
 
 class NewFamily:
-	def __init__:(self, n_members, n_young, 
+	def __init__:(self, n_members=0, n_young, 
 				  n_adult, n_old, age_percentage,
-				  n_male, n_female, gender_percentage,
-				  country):
+				  n_male, n_female, country):
 		if age_percentage:
 			self.n_young = round(n_members / 100 * n_young)
 			self.n_adult = round(n_members / 100 * n_adult)
@@ -21,12 +20,10 @@ class NewFamily:
 			self.n_old = n_old
 			self.n_members = sum([n_young, n_adult, n_old])
 
-		if gender_percentage:
-			self.n_male   = round(n_members / 100 * n_male)
-			self.n_female = round(n_members / 100 * n_female)
-		else:
-			self.n_male   = n_male
-			self.n_female = n_female
+		self.n_male   = n_male
+		self.n_female = n_female
+
+		assert self.n_male + self.n_female == self.n_members, "imbalance n_gender and n_members"
 
 		self.country = country
 		self.surname = self.get_surname()
@@ -40,4 +37,34 @@ class NewFamily:
 		#save modified country data to its json file
 
 	def make_dem_passports(self):
-		def make_passport_for_age_group(self, n, group
+		## refactor, make a new_person method ?
+		agegroup_numbers = ["n_young", "n_adult", "n_old"]
+		gender_numbers   = ["n_female", "n_male"]
+	
+		while (n_young, n_adult, n_old, n_female, n_male) != 0:
+			agegroup_n = random.chioce(agegroup_numbers)
+			vars(self)[agegroup_n] -= 1
+
+			gender_n   = random.choice(gender_numbers)
+			vars(self)[gender_n] -= 1
+			
+			if agegroup_n == "n_young":
+				agegroup = "young"
+			elif agegroup_n == "n_adult":
+				agegroup = "adult"
+			else
+				agegroup = "old"
+			
+			if gender_n = "n_female":
+				gender = "female"
+			else
+				gender = "male"
+
+			name = random.choice(self.country_data[gender + "_names"]
+		 	city = random.choice(self.country_data["cities"])	
+
+		make_passport(
+			name=name, surname=self.surname,
+			gender=gender, agegroup=agegroup,
+			city=city, country=self.country,
+			self.surname)	
