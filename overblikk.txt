@@ -1,0 +1,55 @@
+backend 
+	datastrukturer 
+		land
+		familie	
+		karakter
+		
+		global info
+			aldersgrupper
+			karakteregenskaper
+			karakteregenskapers tilfelletall
+
+	funksjoner
+		definer
+			aldersgrupper
+			karakteregenskaper
+			karakteregenskapers tilfelletall
+
+		legg til landsinfo
+
+		lag ny familie
+
+		fordel karakteregenskaper i land
+		
+		hent info
+			land
+			global info
+			familier
+			karakterer	
+
+frontend
+	definer
+		aldersgrupper
+		karakteregenskaper
+		karakteregenskapers tilfelletall
+
+	legg til landsinfo
+	
+	lag ny familie
+
+	fordel karakteregenskaper i land
+
+	vis karakterer
+		for land
+		for familie
+		individ
+
+
+fordelen med å dele inn dataen på denne måten er at hvert objekt 
+har akkurat passe mye informasjon - hverken for mye eller for lite
+dette gjør at objektene er oversiktlige
+
+det finnes funksjoner for hver del av problemet som skal løses
+funksjonene har tydelig definerte oppgaver og jobber med en spesifik
+del av problemet.
+

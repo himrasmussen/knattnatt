@@ -1,0 +1,1 @@
+{"age_groups": {"adults": [30, 50], "young": [15, 24], "olds": [50, 80]}, "character_number_traits": {"0": "doctor", "1": "terrorist"}}

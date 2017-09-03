@@ -1,0 +1,16 @@
+class Character:
+	def __init__(self, surname='', name='', 
+				 country='', city='', person_number=0,
+				 character_number=0):
+		self.surname = surname
+		self.name = name
+		self.country = country
+		self.city = city
+		self.person_number = person_number	
+		self.character_number = character_number
+
+if __name__ == "__main__":
+	anna = Character(surname="En", name="Anna", country="Norway")
+	print(vars(anna))
+
+				 
